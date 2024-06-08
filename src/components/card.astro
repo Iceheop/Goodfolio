@@ -7,14 +7,14 @@ interface Props {
 }
 const {title, description, image, alt} = Astro.props
 ---
-<article class="mt-2 ratio ratio-1x1 rounded-3 overflow-hidden">
+<article class="mt-2 ratio ratio-1x1 rounded-3 overflow-hidden article-card">
     <header class="z-2 w-100 h-100 d-flex align-items-end justify-content-between p-4">
         <div>
-            <h1 class="fw-bold fs-4 mb-0 text-white">{title}</h1>
-            <p class="text-white m-0">{description}</p>
+            <h1 class="fw-bold fs-2 mb-0 text-white">{title}</h1>
+            <p class="text-white lead m-0">{description}</p>
         </div>
         <div>
-            <button class="btn btn-outline-light border-2 rounded-pill">
+            <button class="btn btn-outline-light border-2 rounded-circle" aria-label="Ver más">
                 <i class="bi bi-arrow-right-short fs-4"></i>
             </button>
         </div>
@@ -26,4 +26,14 @@ const {title, description, image, alt} = Astro.props
 	.object-position-top {
 		object-position: top;
 	}
+    .article-card {
+        img {
+            transition: all 0.3s ease-in-out;
+        }
+    }
+    .article-card:hover {
+        img {
+            transform: scale(1.1);
+        }
+    }
 </style>
